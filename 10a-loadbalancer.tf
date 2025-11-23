@@ -33,9 +33,9 @@ resource "aws_lb_listener" "http" {
   }
 }
 
-output "lb_dns_name" {
-  value = "http://${aws_lb.web_tier.dns_name}"
+# output "lb_dns_name" {
+#   value = "http://${aws_lb.web_tier.dns_name}"
 
 
-  description = "The DNS name of the web Load Balancer."
-}
+#   description = "The DNS name of the web Load Balancer."
+# }
