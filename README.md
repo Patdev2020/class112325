@@ -2,7 +2,7 @@
 This is a Terraform setup file s for AWS
 You need to add your own AMI imformation on the EC2.tf file
 
-
+Quick graph for visual
                           ┌────────────────────────────────────┐
                           │            AWS Region              │
                           │             us-east-1              │
@@ -18,15 +18,15 @@ You need to add your own AMI imformation on the EC2.tf file
    │                                                                            │
    │  ┌──────────────────────┐          ┌──────────────────────┐                │
    │  │  Public Subnet A     │          │  Public Subnet B     │                │
-   │  │    (10.0.1.0/24)      │          │    (10.0.2.0/24)      │                │
+   │  │    (10.0.1.0/24)     │          │    (10.0.2.0/24)     │                │
    │  └──────────────────────┘          └──────────────────────┘                │
    │           │                                     │                          │
    │           ▼                                     ▼                          │
    │  ┌──────────────────────┐          ┌──────────────────────┐                │
-   │  │  ALB (HTTP :80)      │ ◄────────┤  ALB Target Group     │                │
-   │  │ Application LB       │          │ (Health Checks)       │                │
+   │  │  ALB (HTTP :80)      │ ◄────────┤  ALB Target Group    │                │
+   │  │ Application LB       │          │ (Health Checks)      │                │
    │  └──────────────────────┘          └──────────────────────┘                │
-   │           │                                                             │
+   │           │                                                                │
    └───────────┴──────────────────────────────────────────────────────────────┘
                                         │
                                         ▼
@@ -34,7 +34,7 @@ You need to add your own AMI imformation on the EC2.tf file
    │                                                                            │
    │  ┌──────────────────────┐   ┌──────────────────────┐   ┌──────────────────────┐
    │  │ Private Subnet A     │   │ Private Subnet B     │   │ Private Subnet C     │
-   │  │    (10.0.3.0/24)      │   │    (10.0.4.0/24)      │   │    (10.0.5.0/24)      │
+   │  │    (10.0.3.0/24)     │   │    (10.0.4.0/24)     │   │    (10.0.5.0/24)     │
    │  └──────────────────────┘   └──────────────────────┘   └──────────────────────┘
    │          │                         │                         │
    │          ▼                         ▼                         ▼
@@ -50,15 +50,15 @@ You need to add your own AMI imformation on the EC2.tf file
                                         ▼
                           ┌─────────────────────────┐
                           │ NAT Gateway (Public)    │
-                          │ Internet access for      │
-                          │ private EC2 instances    │
+                          │ Internet access for     │
+                          │ private EC2 instances   │
                           └─────────────────────────┘
 
                                         │
                                         ▼
                           ┌─────────────────────────┐
                           │ Internet Gateway (IGW)  │
-                          │ Public Subnets Routing   │
+                          │ Public Subnets Routing  │
                           └─────────────────────────┘
 
 
